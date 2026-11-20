@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI, All 55 Trophies</title>
+<meta name="description" content="Offline tracker and guide for all 55 Grand Theft Auto VI trophies on PS5: checklist, roadmap, missable warnings, difficulty, time and Exophase rarity.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="logo" aria-hidden="true">VI</div>
+    <div>
+      <h1>LEONIDA <span>TROPHY GUIDE</span></h1>
+      <p class="sub">Grand Theft Auto VI · PlayStation 5 · all 55 trophies · offline, free, open source</p>
+    </div>
+  </div>
+  <div class="plat" id="platBox" title="Platinum progress">
+    <svg viewBox="0 0 120 120" width="96" height="96" aria-hidden="true">
+      <circle cx="60" cy="60" r="52" class="ring-bg"/>
+      <circle cx="60" cy="60" r="52" class="ring-fg" id="ringFg"/>
+      <text x="60" y="56" class="ring-num" id="ringNum">0%</text>
+      <text x="60" y="74" class="ring-lbl">PLATINUM</text>
+    </svg>
+    <p class="plat-count" id="platCount">0 / 55 earned</p>
+  </div>
+</header>
+
+<section class="grades" id="gradeBars" aria-label="Progress by grade"></section>
+
+<div class="banner" id="missableBanner" role="alert">
+  <strong>⚠ ONE MISSABLE TROPHY</strong>
+  <span><b>Positive Mental Attitude</b> — meditate on the Lucia balcony in Chapter 1, right after “Down to Earth”. Leave the balcony without meditating and that spot is gone for this playthrough. The other 17 meditation spots stay open all game.</span>
+  <button type="button" id="bannerGo">See it ↓</button>
+</div>
+
+<section class="planner" aria-label="What to do next">
+  <h2>NEXT UP <span class="hint">— your smartest next trophies</span></h2>
+  <ol id="nextUp" class="nextup"></ol>
+</section>
+
+<div class="controls" role="toolbar" aria-label="Guide controls">
+  <div class="views" role="group" aria-label="View">
+    <button type="button" data-view="cards" class="view-btn active">▦ Cards</button>
+    <button type="button" data-view="table" class="view-btn">☰ Table</button>
+    <button type="button" data-view="roadmap" class="view-btn">⛰ Roadmap</button>
+  </div>
+  <input id="search" type="search" placeholder="Search a trophy…" aria-label="Search trophies">
+  <select id="kind" aria-label="Filter by kind">
+    <option value="all">All kinds</option>
+    <option value="story">Story</option>
+    <option value="side">Side / Strangers</option>
+    <option value="collectible">Collectible</option>
+    <option value="activity">Activity</option>
+    <option value="combat">Combat &amp; heists</option>
+    <option value="misc">Misc</option>
+  </select>
+  <select id="grade" aria-label="Filter by grade">
+    <option value="all">All grades</option>
+    <option value="platinum">Platinum</option>
+    <option value="gold">Gold</option>
+    <option value="silver">Silver</option>
+    <option value="bronze">Bronze</option>
+  </select>
+  <label class="chk"><input type="checkbox" id="earnedOnly"> Earned only</label>
+  <label class="chk"><input type="checkbox" id="spoiler" checked> Hide story spoilers</label>
+  <button type="button" id="exportBtn">Export ✓</button>
+  <label class="import">Import <input id="importFile" type="file" accept="application/json"></label>
+  <button type="button" id="resetBtn" title="Clear all ticks and notes">Reset</button>
+</div>
+
+<main>
+  <section id="view-cards" class="view active" aria-label="Trophy cards">
+    <p class="count-line" id="cardsCount"></p>
+    <div class="grid" id="cardGrid"></div>
+  </section>
+
+  <section id="view-table" class="view" aria-label="Trophy table">
+    <p class="count-line" id="tableCount"></p>
+    <table class="ledger">
+      <thead><tr>
+        <th>✓</th><th>Trophy</th><th>Grade</th><th>Kind</th>
+        <th><button type="button" class="sort" data-sort="rarity">Rarity ↕</button></th>
+        <th><button type="button" class="sort" data-sort="difficulty">Diff. ↕</button></th>
+        <th><button type="button" class="sort" data-sort="time">Time ↕</button></th>
+        <th>How to get it</th>
+      </tr></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </section>
+
+  <section id="view-roadmap" class="view" aria-label="Platinum roadmap">
+    <p class="roadmap-intro">Platinum estimate <b>≈ 200 hours</b> · difficulty <b>4 / 10</b> (PowerPyx) · <b>1 missable</b> — do it in Chapter 1. Three phases, in order. Hidden trophies stay spoiler-safe here until you earn them or switch spoilers off.</p>
+    <div id="phases"></div>
+  </section>
+</main>
+
+<div class="detail-backdrop" id="detailBackdrop" hidden>
+  <article class="detail" role="dialog" aria-modal="true" aria-labelledby="detailName" id="detailPane"></article>
+</div>
+
+<footer>
+  <p><b>Sources &amp; method.</b> Trophy names, descriptions and grades: the official PS5 list (Exophase, 18 Nov 2026; cross-checked with PSNProfiles). Rarity: Exophase % on 20 Nov 2026 — day 2 after launch, expect it to rise fast. Guides are written in our own words from PowerPyx, GTABase, KeenGamer and GTAScoop; two trophies are honestly marked unconfirmed and two single-source because no guide has pinned their triggers yet. 100% completion is lenient (≈60% true completion: 200/277 vehicles, 100/255 animals, 70 of 80 challenges).</p>
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games or Sony. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Progress is stored only in your browser (localStorage) — nothing leaves your device. MIT licensed.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
